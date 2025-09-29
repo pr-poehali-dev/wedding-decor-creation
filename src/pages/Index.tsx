@@ -73,7 +73,7 @@ const Index = () => {
             <div className="lg:col-span-7 animate-scale-in">
               <div className="relative">
                 <img
-                  src="https://cdn.poehali.dev/files/fe1b0a5d-4c48-479c-bd8f-23e40bcc9172.jpg"
+                  src="https://cdn.poehali.dev/files/91da5a61-c609-4ad8-9c77-9f2c85587848.jpg"
                   alt="Botanical Wedding Florals"
                   className="w-full aspect-[4/5] object-cover"
                 />
@@ -88,7 +88,7 @@ const Index = () => {
       <section className="py-24">
         <div className="relative h-[70vh]">
           <img
-            src="https://cdn.poehali.dev/files/9c4a110d-c54f-46ae-86be-f6dc96723715.jpg"
+            src="/img/76a7012c-4694-4132-a12c-7c960cd7e1f0.jpg"
             alt="Floral Composition"
             className="w-full h-full object-cover"
           />
@@ -108,7 +108,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <img
-                src="https://cdn.poehali.dev/files/a9e16ab3-066c-4942-a797-270e244d9f46.jpg"
+                src="https://cdn.poehali.dev/files/91da5a61-c609-4ad8-9c77-9f2c85587848.jpg"
                 alt="About Ksenia"
                 className="w-full aspect-[3/4] object-cover"
               />
@@ -194,16 +194,16 @@ const Index = () => {
             <div className="space-y-8">
               <div className="group relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/05db82e2-ec72-4d94-94f6-ebd1fdfc7147.jpg"
-                  alt="White Elegance"
+                  src="/img/20fc7b26-16c9-4f50-bb6a-178fe7c17959.jpg"
+                  alt="Cascading Bridal Bouquet"
                   className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
               </div>
               <div className="group relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/1c3a42bd-f996-4c1b-9fe8-880dd6cb9722.jpg"
-                  alt="Yellow Composition"
+                  src="/img/93d4d4ee-b61c-412b-b33f-1b192f8843db.jpg"
+                  alt="Table Centerpiece"
                   className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
@@ -213,16 +213,16 @@ const Index = () => {
             <div className="space-y-8 md:mt-16">
               <div className="group relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/a9e16ab3-066c-4942-a797-270e244d9f46.jpg"
-                  alt="Purple Avant-garde"
+                  src="https://cdn.poehali.dev/files/91da5a61-c609-4ad8-9c77-9f2c85587848.jpg"
+                  alt="Anthurium Bouquet Detail"
                   className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
               </div>
               <div className="group relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/75a71964-f83d-4c60-a9be-f1f92b9afe4b.jpg"
-                  alt="Natural Harmony"
+                  src="/img/0c054541-9a1d-4c40-b8a7-93ededcb5dc1.jpg"
+                  alt="Bouquet Close-up"
                   className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
@@ -232,16 +232,16 @@ const Index = () => {
             <div className="space-y-8">
               <div className="group relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/9c4a110d-c54f-46ae-86be-f6dc96723715.jpg"
-                  alt="Yellow Symphony"
+                  src="/img/befe0760-af0e-439f-a8e6-f6afeddb1dbe.jpg"
+                  alt="Ceremony Installation"
                   className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
               </div>
               <div className="group relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/files/d62a1845-331d-40f5-8aa2-936d333618f4.jpg"
-                  alt="Succulent Details"
+                  src="/img/3de574ec-b62a-4b6e-aed4-b149dcc67198.jpg"
+                  alt="Textural Details"
                   className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
