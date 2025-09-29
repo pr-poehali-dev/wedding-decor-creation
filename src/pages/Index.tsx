@@ -1,12 +1,290 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  const scrollToSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-[#1A1F2C] to-[#2A2F3C] text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-[#1A1F2C]/95 backdrop-blur-sm z-50 border-b border-white/10">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">💐</span>
+              <h1 className="font-playfair text-2xl font-bold bg-gradient-to-r from-[#F5F0E8] to-[#FFD700] bg-clip-text text-transparent">
+                Ксения Александрова
+              </h1>
+            </div>
+            <div className="hidden md:flex gap-8">
+              {[
+                { id: 'home', label: 'Главная' },
+                { id: 'about', label: 'О декораторе' },
+                { id: 'services', label: 'Услуги' },
+                { id: 'contacts', label: 'Контакты' },
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`font-montserrat transition-all duration-300 hover:text-[#FFD700] ${
+                    activeSection === item.id ? 'text-[#FFD700]' : 'text-white/80'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="pt-32 pb-20 px-6">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Уникальная флористика для вашей{' '}
+                <span className="bg-gradient-to-r from-[#FFB6C1] to-[#9B59B6] bg-clip-text text-transparent">
+                  свадьбы
+                </span>
+              </h2>
+              <p className="font-montserrat text-lg text-white/70 mb-8 leading-relaxed">
+                Создаю авторские цветочные композиции, которые превращают ваш особенный день в произведение искусства
+              </p>
+              <Button
+                onClick={() => scrollToSection('contacts')}
+                className="bg-gradient-to-r from-[#FFB6C1] to-[#9B59B6] hover:opacity-90 text-white font-montserrat px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Заказать консультацию
+              </Button>
+            </div>
+            <div className="relative animate-scale-in">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FFB6C1]/20 to-[#9B59B6]/20 blur-3xl rounded-full"></div>
+              <img
+                src="https://cdn.poehali.dev/files/fe1b0a5d-4c48-479c-bd8f-23e40bcc9172.jpg"
+                alt="Свадебная флористика"
+                className="relative rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-6 bg-[#2A2F3C]/50">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
+              О декораторе
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#FFB6C1] to-[#9B59B6] mx-auto mb-8"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="order-2 md:order-1">
+              <p className="font-montserrat text-lg text-white/80 mb-6 leading-relaxed">
+                Здравствуйте! Я — Ксения Александрова, флорист-декоратор с более чем 10-летним опытом создания неповторимых цветочных композиций для свадеб.
+              </p>
+              <p className="font-montserrat text-lg text-white/80 mb-6 leading-relaxed">
+                Моя философия — каждая свадьба уникальна, как и пара, которая её создаёт. Я не использую шаблоны, а разрабатываю индивидуальные концепции, отражающие вашу историю любви.
+              </p>
+              <p className="font-montserrat text-lg text-white/80 leading-relaxed">
+                Работаю с премиальными цветами со всего мира, сочетая классические техники флористики с современными трендами и авангардными решениями.
+              </p>
+            </div>
+            <div className="order-1 md:order-2">
+              <img
+                src="https://cdn.poehali.dev/files/a9e16ab3-066c-4942-a797-270e244d9f46.jpg"
+                alt="Ксения Александрова"
+                className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
+              Услуги
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#FFB6C1] to-[#9B59B6] mx-auto mb-8"></div>
+            <p className="font-montserrat text-lg text-white/70">
+              Художественная флористика для вашего идеального дня
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {[
+              {
+                icon: '💐',
+                title: 'Букет невесты',
+                description: 'Авторские букеты, созданные специально для вас. Учитываю стиль платья, тематику свадьбы и ваши пожелания.',
+              },
+              {
+                icon: '🌸',
+                title: 'Декор церемонии',
+                description: 'Оформление арок, прохода к алтарю, банкетного зала. Создаю атмосферу, которая запомнится навсегда.',
+              },
+              {
+                icon: '✨',
+                title: 'Композиции на столы',
+                description: 'Изысканные центральные композиции и малые формы для создания единого стиля вашего торжества.',
+              },
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="bg-[#2A2F3C] border-white/10 p-8 hover:border-[#FFB6C1]/50 transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-5xl mb-4">{service.icon}</div>
+                <h3 className="font-playfair text-2xl font-bold mb-4 text-white">
+                  {service.title}
+                </h3>
+                <p className="font-montserrat text-white/70 leading-relaxed">
+                  {service.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+
+          {/* Portfolio Gallery */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                src: 'https://cdn.poehali.dev/files/05db82e2-ec72-4d94-94f6-ebd1fdfc7147.jpg',
+                title: 'Классическая элегантность',
+              },
+              {
+                src: 'https://cdn.poehali.dev/files/a9e16ab3-066c-4942-a797-270e244d9f46.jpg',
+                title: 'Современный авангард',
+              },
+              {
+                src: 'https://cdn.poehali.dev/files/75a71964-f83d-4c60-a9be-f1f92b9afe4b.jpg',
+                title: 'Природная гармония',
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer"
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h4 className="font-playfair text-xl font-bold text-white">
+                      {item.title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contacts Section */}
+      <section id="contacts" className="py-20 px-6 bg-[#2A2F3C]/50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
+              Контакты
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#FFB6C1] to-[#9B59B6] mx-auto mb-8"></div>
+            <p className="font-montserrat text-lg text-white/70">
+              Свяжитесь со мной для обсуждения вашей свадьбы
+            </p>
+          </div>
+
+          <Card className="bg-[#1A1F2C] border-white/10 p-8 md:p-12">
+            <form className="space-y-6">
+              <div>
+                <label className="font-montserrat text-white/80 mb-2 block">
+                  Ваше имя
+                </label>
+                <Input
+                  placeholder="Введите имя"
+                  className="bg-[#2A2F3C] border-white/10 text-white placeholder:text-white/40 focus:border-[#FFB6C1] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="font-montserrat text-white/80 mb-2 block">
+                  Телефон
+                </label>
+                <Input
+                  placeholder="+7 (___) ___-__-__"
+                  className="bg-[#2A2F3C] border-white/10 text-white placeholder:text-white/40 focus:border-[#FFB6C1] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="font-montserrat text-white/80 mb-2 block">
+                  Email
+                </label>
+                <Input
+                  type="email"
+                  placeholder="example@email.com"
+                  className="bg-[#2A2F3C] border-white/10 text-white placeholder:text-white/40 focus:border-[#FFB6C1] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="font-montserrat text-white/80 mb-2 block">
+                  Сообщение
+                </label>
+                <Textarea
+                  placeholder="Расскажите о вашей свадьбе и пожеланиях..."
+                  rows={5}
+                  className="bg-[#2A2F3C] border-white/10 text-white placeholder:text-white/40 focus:border-[#FFB6C1] transition-colors resize-none"
+                />
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-[#FFB6C1] to-[#9B59B6] hover:opacity-90 text-white font-montserrat py-6 text-lg rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Отправить заявку
+              </Button>
+            </form>
+
+            <div className="mt-12 pt-8 border-t border-white/10">
+              <div className="flex flex-col md:flex-row justify-center gap-8 text-center">
+                <div className="flex items-center justify-center gap-3">
+                  <Icon name="Phone" size={24} className="text-[#FFB6C1]" />
+                  <span className="font-montserrat text-white/80">+7 (999) 123-45-67</span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Icon name="Mail" size={24} className="text-[#FFB6C1]" />
+                  <span className="font-montserrat text-white/80">ksenia@wedding-decor.ru</span>
+                </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Icon name="Instagram" size={24} className="text-[#FFB6C1]" />
+                  <span className="font-montserrat text-white/80">@ksenia_flowers</span>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-white/10">
+        <div className="container mx-auto text-center">
+          <p className="font-montserrat text-white/60">
+            © 2025 Ксения Александрова. Свадебная флористика и декор
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
